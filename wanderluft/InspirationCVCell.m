@@ -25,10 +25,12 @@
 @implementation InspirationCVCell
 
 - (void)awakeFromNib {
-    NSLog(@"====%s===", __PRETTY_FUNCTION__);
+
 }
 
 - (void)updateCellView {
+    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.data.pictureURL]]];
+    [self.cityPictureImageView setImage:image];
     self.cityNameLabel.text = self.data.destination.locationName;
     self.departureDetailsLabel.text = self.data.flight.departureDate;
     self.returnDetailsLabel.text = self.data.flight.returnDate;
