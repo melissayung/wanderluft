@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol InspirationsDatasourceDelegate <NSObject>
+- (void)datasourceDataChanged;
+@end
+
 @interface InspirationsDatasource : NSObject
+
+@property (nonatomic) id<InspirationsDatasourceDelegate> delegate;
+@property (nonatomic) NSArray *inspirations;
+
+- (NSArray *)collectionViewData;
 
 @end
