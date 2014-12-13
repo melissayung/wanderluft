@@ -12,22 +12,20 @@
 @implementation InspirationsDatasource
 
 - (void)fetchPictures {
-    NSData *jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pictures" ofType:@"json"]];
+    NSData *jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"inspirations" ofType:@"json"]];
     if(!jsonData) {
         NSLog(@"json not found");
         return;
     }
     id parsedData = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
-    id responseObjects = [parsedData objectForKey:@"response"];
-    if(responseObjects && [responseObjects isKindOfClass:[NSArray class]]) {
+    if(parsedData && [parsedData isKindOfClass:[NSArray class]]) {
         NSMutableArray *list = [[NSMutableArray alloc] init];
-        NSArray *dictionaries = responseObjects;
+        NSArray *dictionaries = parsedData;
         for(NSDictionary *dict in dictionaries) {
             [list addObject:[Inspiration inspirationWithDict:dict]];
         }
         self.inspirations = [NSArray arrayWithArray:list];
     }
-    NSLog(@"Could not parse json :(");
 }
 
 - (NSArray *)collectionViewData {

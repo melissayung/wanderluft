@@ -26,6 +26,10 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.datasource fetchPictures];
+}
+
 - (void)updateView {
     self.inspirations = [self.datasource collectionViewData];
     [self.inspirationsCV reloadData];

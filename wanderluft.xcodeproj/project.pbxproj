@@ -229,6 +229,7 @@
 				TargetAttributes = {
 					70F2D93F1A3C70CA003B9C63 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = NSEXXP67UT;
 					};
 					70F2D95B1A3C70CB003B9C63 = {
 						CreatedOnToolsVersion = 6.1.1;
