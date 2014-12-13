@@ -24,6 +24,10 @@
 
 @implementation InspirationCVCell
 
+- (void)awakeFromNib {
+    NSLog(@"====%s===", __PRETTY_FUNCTION__);
+}
+
 - (void)updateCellView {
     self.cityNameLabel.text = self.data.destination.locationName;
     self.departureDetailsLabel.text = self.data.flight.departureDate;

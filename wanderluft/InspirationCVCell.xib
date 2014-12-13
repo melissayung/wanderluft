@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InspirationCell" id="hFK-zL-oev" customClass="InspirationCVCell">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InspirationCVCell" id="hFK-zL-oev" customClass="InspirationCVCell">
             <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -57,7 +57,6 @@
             </view>
             <size key="customSize" width="291" height="465"/>
             <connections>
-                <outlet property="cityName" destination="TkC-wc-0kN" id="CCX-GK-pDh"/>
                 <outlet property="cityNameLabel" destination="TkC-wc-0kN" id="5Z0-xw-P2S"/>
                 <outlet property="cityPictureImageView" destination="BMl-XT-2mF" id="hyX-Sl-qrX"/>
                 <outlet property="costLabel" destination="zyc-hW-mKh" id="mwN-gg-gla"/>

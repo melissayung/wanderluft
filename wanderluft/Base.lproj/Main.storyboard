@@ -18,7 +18,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MuD-D0-GId">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                                <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vdy-r6-SnM">
                                     <size key="itemSize" width="768" height="1024"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -37,13 +37,17 @@
                                         <size key="customSize" width="768" height="1024"/>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="mvF-ly-sGQ"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="bbt-Fu-8kL"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="inspirationsCV" destination="MuD-D0-GId" id="l8u-nv-fbo"/>
+                        <outlet property="inspirationsCV" destination="MuD-D0-GId" id="jxd-sl-gU4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

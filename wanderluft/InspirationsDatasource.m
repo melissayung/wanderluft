@@ -26,6 +26,10 @@
         }
         self.inspirations = [NSArray arrayWithArray:list];
     }
+    
+    if ([self.delegate respondsToSelector:@selector(datasourceDataChanged)]) {
+        [self.delegate datasourceDataChanged];
+    }
 }
 
 - (NSArray *)collectionViewData {

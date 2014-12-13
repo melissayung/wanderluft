@@ -11,6 +11,7 @@
 @interface InspirationsVC : UIViewController
 
 @property (weak, nonatomic) IBOutlet UICollectionView *inspirationsCV;
+
 @property (nonatomic) NSArray *inspirations;
 
 @end

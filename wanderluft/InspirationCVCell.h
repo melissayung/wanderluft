@@ -13,8 +13,8 @@ static NSString *InspirationCVCellIdentifier = @"InspirationCVCell";
 
 @interface InspirationCVCell : UICollectionViewCell
 
-@property (nonatomic) Inspiration *data;
-
 - (void)updateCellView;
+
+@property (nonatomic) Inspiration *data;
 
 @end

@@ -20,7 +20,7 @@
 		70F2D9751A3C7E69003B9C63 /* Inspiration.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F2D9741A3C7E69003B9C63 /* Inspiration.m */; };
 		70F2D9781A3C7EC1003B9C63 /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F2D9771A3C7EC1003B9C63 /* Flight.m */; };
 		70F2D97B1A3C7ECC003B9C63 /* Destination.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F2D97A1A3C7ECC003B9C63 /* Destination.m */; };
-		70F2D97F1A3C8BC7003B9C63 /* Inspiration.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70F2D97E1A3C8BC7003B9C63 /* Inspiration.xib */; };
+		70F2D97F1A3C8BC7003B9C63 /* InspirationCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70F2D97E1A3C8BC7003B9C63 /* InspirationCVCell.xib */; };
 		70F2D9861A3C8E60003B9C63 /* InspirationCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F2D9851A3C8E60003B9C63 /* InspirationCVCell.m */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +59,7 @@
 		70F2D9771A3C7EC1003B9C63 /* Flight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flight.m; sourceTree = "<group>"; };
 		70F2D9791A3C7ECC003B9C63 /* Destination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Destination.h; sourceTree = "<group>"; };
 		70F2D97A1A3C7ECC003B9C63 /* Destination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Destination.m; sourceTree = "<group>"; };
-		70F2D97E1A3C8BC7003B9C63 /* Inspiration.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Inspiration.xib; sourceTree = "<group>"; };
+		70F2D97E1A3C8BC7003B9C63 /* InspirationCVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InspirationCVCell.xib; sourceTree = "<group>"; };
 		70F2D9841A3C8E60003B9C63 /* InspirationCVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspirationCVCell.h; sourceTree = "<group>"; };
 		70F2D9851A3C8E60003B9C63 /* InspirationCVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspirationCVCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,7 +173,7 @@
 		70F2D9831A3C8CDB003B9C63 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				70F2D97E1A3C8BC7003B9C63 /* Inspiration.xib */,
+				70F2D97E1A3C8BC7003B9C63 /* InspirationCVCell.xib */,
 				70F2D9841A3C8E60003B9C63 /* InspirationCVCell.h */,
 				70F2D9851A3C8E60003B9C63 /* InspirationCVCell.m */,
 			);
@@ -261,7 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70F2D97F1A3C8BC7003B9C63 /* Inspiration.xib in Resources */,
+				70F2D97F1A3C8BC7003B9C63 /* InspirationCVCell.xib in Resources */,
 				70F2D96E1A3C7A0C003B9C63 /* inspirations.json in Resources */,
 				70F2D9521A3C70CB003B9C63 /* Main.storyboard in Resources */,
 				70F2D9571A3C70CB003B9C63 /* LaunchScreen.xib in Resources */,
@@ -484,6 +484,7 @@
 				70F2D9681A3C70CB003B9C63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		70F2D9691A3C70CB003B9C63 /* Build configuration list for PBXNativeTarget "wanderluftTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +493,7 @@
 				70F2D96B1A3C70CB003B9C63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
