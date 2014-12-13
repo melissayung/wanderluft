@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Travelling Mesh. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "InspirationsVC.h"
 
-@interface FirstViewController ()
+@interface InspirationsVC ()
 
 @end
 
-@implementation FirstViewController
+@implementation InspirationsVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
