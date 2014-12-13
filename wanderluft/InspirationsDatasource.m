@@ -8,10 +8,25 @@
 
 #import "InspirationsDatasource.h"
 #import "Inspiration.h"
+#import "Service.h"
+
+@interface InspirationsDatasource ()
+
+@property (nonatomic) Service *service;
+
+@end
 
 @implementation InspirationsDatasource
 
-- (void)fetchPictures {
+
+- (id)init {
+    if (self = [super init]) {
+        self.service = [Service service];
+    }
+    return self;
+}
+
+- (void)testFetchPictures {
     NSData *jsonData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"inspirations" ofType:@"json"]];
     if(!jsonData) {
         NSLog(@"json not found");
@@ -30,6 +45,25 @@
     if ([self.delegate respondsToSelector:@selector(datasourceDataChanged)]) {
         [self.delegate datasourceDataChanged];
     }
+}
+
+- (void)fetchInspirations {
+    [self.service getInspirationsSuccess:^(id jsonObject) {
+        NSArray *jsonArray = [NSMutableArray arrayWithArray:jsonObject];
+        NSMutableArray *list = [[NSMutableArray alloc] init];
+        for(NSDictionary *dict in jsonArray) {
+            [list addObject:[Inspiration inspirationWithDict:dict]];
+        }
+
+        self.inspirations = [NSArray arrayWithArray:list];
+        
+        if ([self.delegate respondsToSelector:@selector(datasourceDataChanged)]) {
+            [self.delegate datasourceDataChanged];
+        }
+    } failure:^{
+        // error handling
+        NSLog(@"====ERROR! boo %s===", __PRETTY_FUNCTION__);
+    }];
 }
 
 - (NSArray *)collectionViewData {

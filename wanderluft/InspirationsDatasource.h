@@ -17,7 +17,8 @@
 @property (nonatomic) id<InspirationsDatasourceDelegate> delegate;
 @property (nonatomic) NSArray *inspirations;
 
-- (void)fetchPictures;
+- (void)testFetchPictures;
+- (void)fetchInspirations;
 - (NSArray *)collectionViewData;
 
 @end

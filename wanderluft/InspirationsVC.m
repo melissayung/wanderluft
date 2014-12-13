@@ -27,12 +27,12 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.datasource fetchPictures];
+    [self.datasource testFetchPictures];
+//    [self.datasource fetchInspirations];
 }
 
 - (void)updateView {
     self.inspirations = [self.datasource collectionViewData];
-    NSLog(@"====%s===", __PRETTY_FUNCTION__);
     [self.inspirationsCV reloadData];
 }
 
