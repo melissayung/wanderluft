@@ -66,7 +66,7 @@
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    self.infoButton.hidden = self.bookButton.hidden = self.addToWishlistButton.hidden = YES;
+    [self hideButtons];
     if (self.isFlightDetailsShowing) [self hideFlightDetails];
 }
 
@@ -81,7 +81,7 @@
     // slide the price up
     [UIView animateWithDuration:0.5f
                      animations:^{
-                         self.flightDetails.frame = CGRectMake(self.flightDetails.frame.origin.x, self.flightDetails.frame.origin.y - 200, self.flightDetails.frame.size.width, 200);
+                         self.flightDetails.frame = CGRectMake(self.flightDetails.frame.origin.x, 854, self.flightDetails.frame.size.width, self.flightDetails.frame.size.height);
                      }
                      completion:^(BOOL finished){
                          self.isFlightDetailsShowing = YES;
@@ -92,7 +92,7 @@
     // slide it back down
     [UIView animateWithDuration:0.5f
                      animations:^{
-                         self.flightDetails.frame = CGRectMake(self.flightDetails.frame.origin.x, self.flightDetails.frame.origin.y + 200, self.flightDetails.frame.size.width, 200);
+                         self.flightDetails.frame = CGRectMake(self.flightDetails.frame.origin.x, 1224, self.flightDetails.frame.size.width, self.flightDetails.frame.size.height);
                      }
                      completion:^(BOOL finished){
                          self.isFlightDetailsShowing = NO;
@@ -100,7 +100,23 @@
 }
 
 - (void)showButtons {
-    self.infoButton.hidden = self.bookButton.hidden = self.addToWishlistButton.hidden = NO;
+    // slide them in from the top
+    [UIView animateWithDuration:0.5f
+                     animations:^{
+                         self.infoButton.hidden = self.bookButton.hidden = self.addToWishlistButton.hidden = NO;
+                         self.infoButton.frame = CGRectMake(self.infoButton.frame.origin.x, 18, self.infoButton.frame.size.width, self.infoButton.frame.size.height);
+                         self.bookButton.frame = CGRectMake(self.bookButton.frame.origin.x, 18, self.bookButton.frame.size.width, self.bookButton.frame.size.height);
+                         self.addToWishlistButton.frame = CGRectMake(self.addToWishlistButton.frame.origin.x, 18, self.addToWishlistButton.frame.size.width, self.addToWishlistButton.frame.size.height);
+                     }
+                     completion:^(BOOL finished){
+                     }];
+}
+
+- (void)hideButtons {
+    self.infoButton.hidden = self.bookButton.hidden = self.addToWishlistButton.hidden = YES;
+    self.infoButton.frame = CGRectMake(self.infoButton.frame.origin.x, -self.infoButton.frame.size.height, self.infoButton.frame.size.width, self.infoButton.frame.size.height);
+    self.bookButton.frame = CGRectMake(self.bookButton.frame.origin.x, -self.bookButton.frame.size.height, self.bookButton.frame.size.width, self.bookButton.frame.size.height);
+    self.addToWishlistButton.frame = CGRectMake(self.addToWishlistButton.frame.origin.x, -self.addToWishlistButton.frame.size.height, self.addToWishlistButton.frame.size.width, self.addToWishlistButton.frame.size.height);
 }
 
 #pragma mark - CollectionViewDatasource delegate methods
@@ -120,7 +136,6 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self showButtons];
     if (self.isFlightDetailsShowing) [self hideFlightDetails];
     else                             [self showFlightDetails];
 }
