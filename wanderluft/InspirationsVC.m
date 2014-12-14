@@ -13,11 +13,15 @@
 #import "Inspiration.h"
 #import "Flight.h"
 #import "Destination.h"
+#import "FXBlurView.h"
 
 @interface InspirationsVC () <InspirationsDatasourceDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
+@property (weak, nonatomic) IBOutlet UIView *flightDetails;
 @property (nonatomic) InspirationsDatasource *datasource;
 @property (nonatomic) int selectedInspirationCVIndex;
+@property (nonatomic) BOOL isFlightDetailsShowing;
+
 @end
 
 @implementation InspirationsVC
@@ -27,12 +31,15 @@
     [self.inspirationsCV registerNib:[UINib nibWithNibName:InspirationCVCellIdentifier bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:InspirationCVCellIdentifier];
     self.datasource = [[InspirationsDatasource alloc] init];
     self.datasource.delegate = self;
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.datasource testFetchPictures];
     //[self.datasource fetchInspirations];
+}
+
+-(BOOL)prefersStatusBarHidden{
+    return YES;
 }
 
 - (void)updateView {
@@ -46,6 +53,36 @@
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     self.infoButton.hidden = self.bookButton.hidden = self.addToWishlistButton.hidden = YES;
+}
+
+- (void)showPriceDetails {
+    // slide the price up
+    [UIView animateWithDuration:0.5f
+                     animations:^{
+                         self.flightDetails.frame = CGRectMake(self.flightDetails.frame.origin.x, self.flightDetails.frame.origin.y - 200, self.flightDetails.frame.size.width, 200);
+                     }
+                     completion:^(BOOL finished){
+                         self.isFlightDetailsShowing = YES;
+                     }];
+}
+
+- (void)hidePriceDetails {
+    // slide it back down
+    [UIView animateWithDuration:0.5f
+                     animations:^{
+                         self.flightDetails.frame = CGRectMake(self.flightDetails.frame.origin.x, self.flightDetails.frame.origin.y + 200, self.flightDetails.frame.size.width, 200);
+                     }
+                     completion:^(BOOL finished){
+                         self.isFlightDetailsShowing = NO;
+                     }];
+}
+
+- (void)showButtons:(UIScrollView *)view {
+    // work out where we have scrolled to
+    CGPoint contentOffset = view.contentOffset;
+    CGSize viewSize = view.bounds.size;
+    self.selectedInspirationCVIndex = MAX(0.0, contentOffset.x / viewSize.width);
+    self.infoButton.hidden = self.bookButton.hidden = self.addToWishlistButton.hidden = NO;
 }
 
 #pragma mark - CollectionViewDatasource delegate methods
@@ -66,19 +103,8 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [self showButtons:collectionView];
-    [self showPriceDetails];
-}
-
-- (void)showPriceDetails {
-    
-}
-
-- (void)showButtons:(UIScrollView *)view {
-    // work out where we have scrolled to
-    CGPoint contentOffset = view.contentOffset;
-    CGSize viewSize = view.bounds.size;
-    self.selectedInspirationCVIndex = MAX(0.0, contentOffset.x / viewSize.width);
-    self.infoButton.hidden = self.bookButton.hidden = self.addToWishlistButton.hidden = NO;
+    if (self.isFlightDetailsShowing) [self hidePriceDetails];
+    else                             [self showPriceDetails];
 }
 
 #pragma mark - InspirationDatasource delegate methods

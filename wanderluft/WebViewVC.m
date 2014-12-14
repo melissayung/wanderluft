@@ -41,6 +41,10 @@
     [self.spinner startAnimating];
 }
 
+-(BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
 #pragma mark - UIWebViewDelegate methods
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [self.spinner stopAnimating];
