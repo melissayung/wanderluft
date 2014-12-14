@@ -17,5 +17,5 @@
 @property (nonatomic) NSString *journeyDuration;
 @property (nonatomic) NSString *destionationAirport;
 @property (nonatomic) NSString *price;
-
+@property (nonatomic) NSString *bookingURL;
 @end

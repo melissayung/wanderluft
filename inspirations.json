@@ -11,7 +11,8 @@
             "returnDate":"Monday 24th Dec 2014 15:00",
             "journeyDuration":"16h 30m",
             "destinationAirport": "HKT",
-            "price": "999"
+            "price": "999",
+            "bookingURL": "http://www.lufthansa.com/online/portal/lh/de/homepage"
         }
     },
     {
@@ -26,7 +27,8 @@
             "returnDate":"Monday 24th Jan 2015 15:00",
             "journeyDuration":"1h 30m",
             "destinationAirport": "CDG",
-            "price": "140"
+            "price": "140",
+            "bookingURL": "http://www.lufthansa.com/online/portal/lh/de/homepage"
         }
     },
     {
@@ -41,7 +43,8 @@
             "returnDate":"Monday 24th Feb 2015 15:00",
             "journeyDuration":"50m",
             "destinationAirport": "HKT",
-            "price": "59"
+            "price": "59",
+            "bookingURL": "http://www.lufthansa.com/online/portal/lh/de/homepage"
         }
     }
 ]

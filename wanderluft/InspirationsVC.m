@@ -10,6 +10,8 @@
 #import "InspirationCVCell.h"
 #import "InspirationsDatasource.h"
 #import "WebViewVC.h"
+#import "Inspiration.h"
+#import "Flight.h"
 
 @interface InspirationsVC () <InspirationsDatasourceDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -83,15 +85,15 @@
 #pragma mark - UI callbacks
 - (IBAction)bookButtonPressed:(UIButton *)sender {
     // we need to build the deep linking
-    NSString *URL = @"/rs/bkg/login.do?origin=CGN&destination=HAM&dtin1=20&ymin=042014&tminbound=0";
-//    NSString *destination =
+    Inspiration *selectedInspiration = (Inspiration *)(self.inspirations[self.selectedInspirationCVIndex]);
+    NSString *URL = selectedInspiration.flight.bookingURL;
+    
     WebViewVC *webViewVC = [WebViewVC webViewVCWithURL:URL];
-//    [self pushVC:webViewVC];
-    NSLog(@"%s=== %d", __PRETTY_FUNCTION__,self.selectedInspirationCVIndex);
+    [self presentViewController:webViewVC animated:YES completion:nil];
 }
 
 - (IBAction)addToWishlistButtonPressed:(UIButton *)sender {
-    
+    self.addToWishlistButton.selected = !self.addToWishlistButton.selected;
 }
 
 

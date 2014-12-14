@@ -22,6 +22,7 @@
         self.journeyDuration = dict[@"journeyDuration"];
         self.destionationAirport  = dict[@"destinationAirport"];
         self.price = dict[@"price"];
+        self.bookingURL = dict[@"bookingURL"];
     }
     return self;
 }

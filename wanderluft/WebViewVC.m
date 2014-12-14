@@ -33,19 +33,9 @@
         [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.URL]]];
     }
     
-    int spinnerYPos = 50;
     self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    
-//        UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//        [backButton setAccessibilityLabel:NSLocalizedString(@"WebViewBack.Label", nil)];
-//        [backButton setImage:[UIImage imageNamed:@"BackBnDefault"] forState:UIControlStateNormal];
-//        [backButton setImage:[UIImage imageNamed:@"BackBnClicked"] forState:UIControlStateHighlighted];
-//        [backButton sizeToFit];
-//        [backButton addTarget:self action:@selector(backButtonPressed) forControlEvents:UIControlEventTouchUpInside];
-//        
-//        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
-    
-    self.spinner.center = CGPointMake([UIScreen mainScreen].bounds.size.width*.5, spinnerYPos);
+  
+    self.spinner.center = CGPointMake([UIScreen mainScreen].bounds.size.width*.5, [UIScreen mainScreen].bounds.size.height*.5);
     self.spinner.hidesWhenStopped = YES;
     [self.view addSubview:self.spinner];
     [self.spinner startAnimating];
@@ -57,15 +47,12 @@
 }
 
 #pragma mark - UI CALLBACKS
-- (void)backButtonPressed {
-//    [UIViewController popVC:self];
+- (IBAction)closeWebviewButtonPressed:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+        // maybe do something here
+    }];
 }
 
-- (IBAction)smallOverlayBackButtonPressed:(UIButton *)sender {
-    if ([self.delegate respondsToSelector:@selector(webViewClose:)]) {
-        [self.delegate webViewClose:self];
-    }
-}
 
 
 @end
