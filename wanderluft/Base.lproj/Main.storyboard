@@ -144,9 +144,14 @@
                     <connections>
                         <outlet property="addToWishlistButton" destination="BRu-4r-70b" id="dyL-DE-KNl"/>
                         <outlet property="bookButton" destination="KsR-QW-cXM" id="6ru-5T-HP7"/>
+                        <outlet property="departureDetailsLabel" destination="T1w-mk-kDv" id="aJs-ZB-JwO"/>
+                        <outlet property="durationLabel" destination="Bgl-mb-bZm" id="mnp-Zf-ZGX"/>
                         <outlet property="flightDetails" destination="APb-Vo-5kR" id="qEI-4L-NaB"/>
+                        <outlet property="flightNumberLabel" destination="0xz-zU-Bqn" id="sgK-Wn-7iv"/>
                         <outlet property="infoButton" destination="b24-dm-d7i" id="FW6-tu-BMY"/>
                         <outlet property="inspirationsCV" destination="MuD-D0-GId" id="jxd-sl-gU4"/>
+                        <outlet property="priceLabel" destination="DAL-Zm-cbb" id="6mV-yQ-1W0"/>
+                        <outlet property="returnDetailsLabel" destination="Gx2-z2-scS" id="dYB-ZI-0DE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

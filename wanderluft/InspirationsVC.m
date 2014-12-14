@@ -18,8 +18,15 @@
 @interface InspirationsVC () <InspirationsDatasourceDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UIView *flightDetails;
+@property (weak, nonatomic) IBOutlet UILabel *flightNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *departureDetailsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *returnDetailsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *durationLabel;
+
 @property (nonatomic) InspirationsDatasource *datasource;
-@property (nonatomic) int selectedInspirationCVIndex;
+@property (nonatomic) Inspiration *selectedInspiration;
+//@property (nonatomic) int selectedInspirationCVIndex;
 @property (nonatomic) BOOL isFlightDetailsShowing;
 
 @end
@@ -48,14 +55,29 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)view {
-    [self showButtons:view];
+    
+    // work out where we have scrolled to
+    CGPoint contentOffset = view.contentOffset;
+    CGSize viewSize = view.bounds.size;
+    int index = MAX(0.0, contentOffset.x / viewSize.width);
+    self.selectedInspiration = self.inspirations[index];
+    [self fillInFlightDetails];
+    [self showButtons];
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     self.infoButton.hidden = self.bookButton.hidden = self.addToWishlistButton.hidden = YES;
+    if (self.isFlightDetailsShowing) [self hideFlightDetails];
 }
 
-- (void)showPriceDetails {
+- (void)fillInFlightDetails {
+    self.durationLabel.text = self.selectedInspiration.flight.journeyDuration;
+    self.departureDetailsLabel.text = self.selectedInspiration.flight.departureDate;
+    self.returnDetailsLabel.text = self.selectedInspiration.flight.returnDate;
+    self.priceLabel.text = self.selectedInspiration.flight.price;
+}
+
+- (void)showFlightDetails {
     // slide the price up
     [UIView animateWithDuration:0.5f
                      animations:^{
@@ -66,7 +88,7 @@
                      }];
 }
 
-- (void)hidePriceDetails {
+- (void)hideFlightDetails {
     // slide it back down
     [UIView animateWithDuration:0.5f
                      animations:^{
@@ -77,11 +99,7 @@
                      }];
 }
 
-- (void)showButtons:(UIScrollView *)view {
-    // work out where we have scrolled to
-    CGPoint contentOffset = view.contentOffset;
-    CGSize viewSize = view.bounds.size;
-    self.selectedInspirationCVIndex = MAX(0.0, contentOffset.x / viewSize.width);
+- (void)showButtons {
     self.infoButton.hidden = self.bookButton.hidden = self.addToWishlistButton.hidden = NO;
 }
 
@@ -102,9 +120,9 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self showButtons:collectionView];
-    if (self.isFlightDetailsShowing) [self hidePriceDetails];
-    else                             [self showPriceDetails];
+    [self showButtons];
+    if (self.isFlightDetailsShowing) [self hideFlightDetails];
+    else                             [self showFlightDetails];
 }
 
 #pragma mark - InspirationDatasource delegate methods
@@ -115,8 +133,7 @@
 #pragma mark - UI callbacks
 - (IBAction)bookButtonPressed:(UIButton *)sender {
     // we need to build the deep linking
-    Inspiration *selectedInspiration = (Inspiration *)(self.inspirations[self.selectedInspirationCVIndex]);
-    NSString *URL = selectedInspiration.flight.bookingURL;
+    NSString *URL = self.selectedInspiration.flight.bookingURL;
     
     WebViewVC *webViewVC = [WebViewVC webViewVCWithURL:URL];
     [self presentViewController:webViewVC animated:YES completion:nil];
@@ -128,8 +145,7 @@
 
 - (IBAction)infoButtonPressed:(UIButton *)sender {
     //TODO check if luftansa has all the guide or can we check programatically and then hide/display info button?
-    Inspiration *selectedInspiration = (Inspiration *)(self.inspirations[self.selectedInspirationCVIndex]);
-    NSString *URL = [@"http://travelguide.lufthansa.com/de/en/" stringByAppendingString:selectedInspiration.destination.locationName];
+    NSString *URL = [@"http://travelguide.lufthansa.com/de/en/" stringByAppendingString:self.selectedInspiration.destination.locationName];
     
     WebViewVC *webViewVC = [WebViewVC webViewVCWithURL:URL];
     [self presentViewController:webViewVC animated:YES completion:nil];
