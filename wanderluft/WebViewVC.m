@@ -28,20 +28,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    self.webView.delegate = self;
+//    if ([self.URL hasPrefix:@"http"]) {
+//        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.URL]]];
+//    }
+//    
+//    self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+//  
+//    self.spinner.center = CGPointMake([UIScreen mainScreen].bounds.size.width*.5, [UIScreen mainScreen].bounds.size.height*.5);
+//    self.spinner.hidesWhenStopped = YES;
+//    [self.view addSubview:self.spinner];
+//    [self.spinner startAnimating];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     self.webView.delegate = self;
     if ([self.URL hasPrefix:@"http"]) {
         [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.URL]]];
     }
     
     self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-  
+    
     self.spinner.center = CGPointMake([UIScreen mainScreen].bounds.size.width*.5, [UIScreen mainScreen].bounds.size.height*.5);
     self.spinner.hidesWhenStopped = YES;
     [self.view addSubview:self.spinner];
-    [self.spinner startAnimating];
+    
+    
 }
 
--(BOOL)prefersStatusBarHidden{
+-(BOOL)prefersStatusBarHidden {
     return YES;
 }
 

@@ -7,8 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "InspirationsVC.h"
 
 @interface AppDelegate ()
+
 
 @end
 

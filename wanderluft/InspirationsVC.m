@@ -44,11 +44,12 @@
     self.datasource = [[InspirationsDatasource alloc] init];
     self.datasource.delegate = self;
     [self.datasource testFetchPictures];
-    //[self.datasource fetchInspirations];
+//    [self.datasource fetchInspirations];
+    
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window.rootViewController = self;
+//    [self.window makeKeyAndVisible];
 }
-
-//- (void)viewWillAppear:(BOOL)animated {
-//}
 
 -(BOOL)prefersStatusBarHidden{
     return YES;
@@ -166,9 +167,9 @@
     NSString *URL = @"https://mobile.lufthansa.com/rs/bkg/login.do?origin=CGN&destination=HAM&dtin1=20&ymin=042014&tminbound=0"; //@"http://travelguide.lufthansa.com/de/en/paris/";// [@"http://travelguide.lufthansa.com/de/en/" stringByAppendingString:self.selectedInspiration.destination.locationName];
     //
 
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]];
-//    WebViewVC *webViewVC = [WebViewVC webViewVCWithURL:URL];
-//    [self presentViewController:webViewVC animated:YES completion:nil];
+//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]];
+    WebViewVC *webViewVC = [WebViewVC webViewVCWithURL:URL];
+    [self presentViewController:webViewVC animated:YES completion:nil];
 }
 
 - (IBAction)addToWishlistButtonPressed:(UIButton *)sender {
@@ -186,9 +187,9 @@
     NSString *URL = @"http://travelguide.lufthansa.com/de/en/paris/";
     //@"http://www.google.com"; //@"https://mobile.lufthansa.com/rs/bkg/login.do?origin=CGN&destination=HAM&dtin1=20&ymin=042014&tminbound=0";//@"http://travelguide.lufthansa.com/de/en/paris/";// [@"http://travelguide.lufthansa.com/de/en/" stringByAppendingString:self.selectedInspiration.destination.locationName];
 //
-//    WebViewVC *webViewVC = [WebViewVC webViewVCWithURL:URL];
-//    [self presentViewController:webViewVC animated:YES completion:nil];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]];
+    WebViewVC *webViewVC = [WebViewVC webViewVCWithURL:URL];
+    [self presentViewController:webViewVC animated:YES completion:nil];
+//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]];
 }
 
 
