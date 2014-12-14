@@ -26,6 +26,12 @@
 		70E3A6AA1A3CB7AE000ABFF3 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E3A6A11A3CB7AE000ABFF3 /* UIRefreshControl+AFNetworking.m */; };
 		70E3A6AB1A3CB7AE000ABFF3 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E3A6A31A3CB7AE000ABFF3 /* UIWebView+AFNetworking.m */; };
 		70E3A6B71A3CD37A000ABFF3 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E3A6B61A3CD37A000ABFF3 /* Utils.m */; };
+		70E3A6BA1A3CD8EF000ABFF3 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E3A6B91A3CD8EF000ABFF3 /* FXBlurView.m */; };
+		70E3A6BC1A3CD907000ABFF3 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E3A6BB1A3CD907000ABFF3 /* Accelerate.framework */; };
+		70E3A6BF1A3CDD42000ABFF3 /* LH_Crane-Single_yw_13_rgb_2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 70E3A6BE1A3CDD42000ABFF3 /* LH_Crane-Single_yw_13_rgb_2.gif */; };
+		70E3A6C51A3D08B9000ABFF3 /* WebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E3A6C41A3D08B9000ABFF3 /* WebViewVC.m */; };
+		70E3A6C81A3D15D8000ABFF3 /* wishlistBtnNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 70E3A6C61A3D15D8000ABFF3 /* wishlistBtnNormal.png */; };
+		70E3A6C91A3D15D8000ABFF3 /* wishlistBtnPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 70E3A6C71A3D15D8000ABFF3 /* wishlistBtnPressed.png */; };
 		70F2D9461A3C70CB003B9C63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F2D9451A3C70CB003B9C63 /* main.m */; };
 		70F2D9491A3C70CB003B9C63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F2D9481A3C70CB003B9C63 /* AppDelegate.m */; };
 		70F2D94C1A3C70CB003B9C63 /* InspirationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F2D94B1A3C70CB003B9C63 /* InspirationsVC.m */; };
@@ -94,6 +100,14 @@
 		70E3A6A31A3CB7AE000ABFF3 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		70E3A6B51A3CD37A000ABFF3 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		70E3A6B61A3CD37A000ABFF3 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		70E3A6B81A3CD8EF000ABFF3 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		70E3A6B91A3CD8EF000ABFF3 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		70E3A6BB1A3CD907000ABFF3 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		70E3A6BE1A3CDD42000ABFF3 /* LH_Crane-Single_yw_13_rgb_2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "LH_Crane-Single_yw_13_rgb_2.gif"; sourceTree = "<group>"; };
+		70E3A6C31A3D08B9000ABFF3 /* WebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewVC.h; sourceTree = "<group>"; };
+		70E3A6C41A3D08B9000ABFF3 /* WebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewVC.m; sourceTree = "<group>"; };
+		70E3A6C61A3D15D8000ABFF3 /* wishlistBtnNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wishlistBtnNormal.png; sourceTree = "<group>"; };
+		70E3A6C71A3D15D8000ABFF3 /* wishlistBtnPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wishlistBtnPressed.png; sourceTree = "<group>"; };
 		70F2D9401A3C70CA003B9C63 /* wanderluft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wanderluft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F2D9441A3C70CB003B9C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70F2D9451A3C70CB003B9C63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -128,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70E3A6BC1A3CD907000ABFF3 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,9 +226,20 @@
 			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
+		70E3A6BD1A3CDD36000ABFF3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				70E3A6C61A3D15D8000ABFF3 /* wishlistBtnNormal.png */,
+				70E3A6C71A3D15D8000ABFF3 /* wishlistBtnPressed.png */,
+				70E3A6BE1A3CDD42000ABFF3 /* LH_Crane-Single_yw_13_rgb_2.gif */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		70F2D9371A3C70CA003B9C63 = {
 			isa = PBXGroup;
 			children = (
+				70E3A6BB1A3CD907000ABFF3 /* Accelerate.framework */,
 				70F2D9421A3C70CA003B9C63 /* wanderluft */,
 				70E3A6921A3CB7AE000ABFF3 /* UIKit+AFNetworking */,
 				70E3A6751A3CB79C000ABFF3 /* AFNetworking */,
@@ -235,14 +261,19 @@
 		70F2D9421A3C70CA003B9C63 /* wanderluft */ = {
 			isa = PBXGroup;
 			children = (
+				70E3A6BD1A3CDD36000ABFF3 /* Resources */,
 				70E3A6711A3CAC8A000ABFF3 /* Service */,
 				70E3A6701A3CAC69000ABFF3 /* InspirationsTab */,
 				70F2D9831A3C8CDB003B9C63 /* Cells */,
 				70F2D9721A3C7E53003B9C63 /* Model */,
 				70F2D9471A3C70CB003B9C63 /* AppDelegate.h */,
 				70F2D9481A3C70CB003B9C63 /* AppDelegate.m */,
+				70E3A6B81A3CD8EF000ABFF3 /* FXBlurView.h */,
+				70E3A6B91A3CD8EF000ABFF3 /* FXBlurView.m */,
 				70E3A6B51A3CD37A000ABFF3 /* Utils.h */,
 				70E3A6B61A3CD37A000ABFF3 /* Utils.m */,
+				70E3A6C31A3D08B9000ABFF3 /* WebViewVC.h */,
+				70E3A6C41A3D08B9000ABFF3 /* WebViewVC.m */,
 				70F2D94D1A3C70CB003B9C63 /* SecondViewController.h */,
 				70F2D94E1A3C70CB003B9C63 /* SecondViewController.m */,
 				70F2D9501A3C70CB003B9C63 /* Main.storyboard */,
@@ -393,6 +424,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				70F2D97F1A3C8BC7003B9C63 /* InspirationCVCell.xib in Resources */,
+				70E3A6C81A3D15D8000ABFF3 /* wishlistBtnNormal.png in Resources */,
+				70E3A6C91A3D15D8000ABFF3 /* wishlistBtnPressed.png in Resources */,
+				70E3A6BF1A3CDD42000ABFF3 /* LH_Crane-Single_yw_13_rgb_2.gif in Resources */,
 				70F2D96E1A3C7A0C003B9C63 /* inspirations.json in Resources */,
 				70F2D9521A3C70CB003B9C63 /* Main.storyboard in Resources */,
 				70F2D9571A3C70CB003B9C63 /* LaunchScreen.xib in Resources */,
@@ -434,6 +468,7 @@
 				70E3A6901A3CB79C000ABFF3 /* AFURLResponseSerialization.m in Sources */,
 				70F2D9781A3C7EC1003B9C63 /* Flight.m in Sources */,
 				70E3A6B71A3CD37A000ABFF3 /* Utils.m in Sources */,
+				70E3A6C51A3D08B9000ABFF3 /* WebViewVC.m in Sources */,
 				70F2D9751A3C7E69003B9C63 /* Inspiration.m in Sources */,
 				70E3A68F1A3CB79C000ABFF3 /* AFURLRequestSerialization.m in Sources */,
 				70E3A6AA1A3CB7AE000ABFF3 /* UIRefreshControl+AFNetworking.m in Sources */,
@@ -441,6 +476,7 @@
 				70E3A68C1A3CB79C000ABFF3 /* AFNetworkReachabilityManager.m in Sources */,
 				70F2D9461A3C70CB003B9C63 /* main.m in Sources */,
 				70E3A6891A3CB79C000ABFF3 /* AFHTTPRequestOperation.m in Sources */,
+				70E3A6BA1A3CD8EF000ABFF3 /* FXBlurView.m in Sources */,
 				70E3A68B1A3CB79C000ABFF3 /* AFHTTPSessionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

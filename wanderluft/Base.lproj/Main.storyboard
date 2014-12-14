@@ -19,7 +19,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MuD-D0-GId">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vdy-r6-SnM">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="vdy-r6-SnM">
                                     <size key="itemSize" width="768" height="1024"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -42,11 +42,33 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="bbt-Fu-8kL"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRu-4r-70b">
+                                <rect key="frame" x="333" y="497" width="44" height="44"/>
+                                <state key="normal" image="wishlistBtnNormal.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="wishlistBtnPressed.png"/>
+                                <state key="highlighted" image="wishlistBtnPressed.png"/>
+                                <connections>
+                                    <action selector="addToWishlistButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Qzu-uM-Jny"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsR-QW-cXM">
+                                <rect key="frame" x="200" y="492" width="88" height="40"/>
+                                <state key="normal" title="BOOK">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="bookButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="82g-bZ-1oP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="addToWishlistButton" destination="BRu-4r-70b" id="dyL-DE-KNl"/>
+                        <outlet property="bookButton" destination="KsR-QW-cXM" id="6ru-5T-HP7"/>
                         <outlet property="inspirationsCV" destination="MuD-D0-GId" id="jxd-sl-gU4"/>
                     </connections>
                 </viewController>
@@ -94,6 +116,33 @@
             </objects>
             <point key="canvasLocation" x="960" y="614.40000000000009"/>
         </scene>
+        <!--Web ViewVC-->
+        <scene sceneID="YSV-RH-PK9">
+            <objects>
+                <viewController storyboardIdentifier="WebViewVC" id="mAm-2k-KYs" customClass="WebViewVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mkB-HJ-Afi"/>
+                        <viewControllerLayoutGuide type="bottom" id="VVA-8F-cUk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HPr-bc-uCJ">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bbz-rx-HYb">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="webview" destination="Bbz-rx-HYb" id="4UD-aX-snq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IWi-3K-On9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1866" y="997"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -117,6 +166,8 @@
     <resources>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
+        <image name="wishlistBtnNormal.png" width="234" height="235"/>
+        <image name="wishlistBtnPressed.png" width="234" height="235"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

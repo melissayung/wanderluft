@@ -10,9 +10,11 @@
 #import "Inspiration.h"
 #import "Destination.h"
 #import "Flight.h"
+#import "FXBlurView.h"
 
 @interface InspirationCVCell()
 
+@property (weak, nonatomic) IBOutlet UIView *flightDetailBackgroundView;
 @property (weak, nonatomic) IBOutlet UIImageView *cityPictureImageView;
 @property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *flightNameLabel;
@@ -29,6 +31,13 @@
 }
 
 - (void)updateCellView {
+    
+    FXBlurView *blurView = [[FXBlurView alloc] initWithFrame:self.cityNameLabel.frame];
+    blurView.blurRadius = 40.0;
+    blurView.tintColor = [UIColor clearColor];
+
+    [self.contentView insertSubview:blurView atIndex:1];
+    
     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.data.pictureURL]]];
     [self.cityPictureImageView setImage:image];
     self.cityNameLabel.text = self.data.destination.locationName;
@@ -36,5 +45,7 @@
     self.returnDetailsLabel.text = self.data.flight.returnDate;
     self.costLabel.text = self.data.flight.price;
 }
+
+
 
 @end
