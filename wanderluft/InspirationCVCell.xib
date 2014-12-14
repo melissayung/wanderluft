@@ -16,14 +16,20 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BMl-XT-2mF">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                     </imageView>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sunny" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztX-z9-isK">
+                        <rect key="frame" x="239" y="944" width="234" height="80"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="City Name" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="TkC-wc-0kN">
-                        <rect key="frame" x="0.0" y="720" width="738" height="80"/>
+                        <rect key="frame" x="502" y="944" width="236" height="80"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="36"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aYR-5N-3ri">
-                        <rect key="frame" x="0.0" y="1000" width="768" height="200"/>
+                        <rect key="frame" x="0.0" y="1024" width="768" height="200"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LH1209" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVn-pU-FIM">
                                 <rect key="frame" x="15" y="15" width="100" height="20"/>
@@ -83,6 +89,7 @@
                 <outlet property="flightDetailBackgroundView" destination="aYR-5N-3ri" id="MRk-2E-lHI"/>
                 <outlet property="flightNameLabel" destination="fVn-pU-FIM" id="A21-eC-ib3"/>
                 <outlet property="returnDetailsLabel" destination="wd5-6i-npL" id="uDh-Jh-Z17"/>
+                <outlet property="weather" destination="ztX-z9-isK" id="gdX-6H-l65"/>
             </connections>
             <point key="canvasLocation" x="486" y="158"/>
         </collectionViewCell>

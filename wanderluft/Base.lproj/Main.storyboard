@@ -43,7 +43,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRu-4r-70b">
-                                <rect key="frame" x="333" y="738" width="44" height="44"/>
+                                <rect key="frame" x="89" y="962" width="44" height="44"/>
                                 <state key="normal" image="wishlistBtnNormal.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -54,7 +54,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsR-QW-cXM">
-                                <rect key="frame" x="250" y="738" width="44" height="44"/>
+                                <rect key="frame" x="163" y="962" width="44" height="44"/>
                                 <state key="normal" image="bookBtnNormal.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -65,7 +65,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b24-dm-d7i">
-                                <rect key="frame" x="167" y="738" width="44" height="44"/>
+                                <rect key="frame" x="15" y="962" width="44" height="44"/>
                                 <state key="normal" image="infoBtnNormal.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>

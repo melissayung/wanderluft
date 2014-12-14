@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *returnDetailsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *costLabel;
 @property (weak, nonatomic) IBOutlet UILabel *duration;
+@property (weak, nonatomic) IBOutlet UILabel *weather;
 
 @end
 
@@ -33,7 +34,7 @@
 - (void)updateCellView {
     
     FXBlurView *blurView = [[FXBlurView alloc] init];
-    [blurView setFrame:CGRectMake(self.cityNameLabel.frame.origin.x, self.cityNameLabel.frame.origin.y, [UIScreen mainScreen].bounds.size.width, self.cityNameLabel.frame.size.height)];
+    [blurView setFrame:CGRectMake(0, self.cityNameLabel.frame.origin.y, [UIScreen mainScreen].bounds.size.width, self.cityNameLabel.frame.size.height)];
     blurView.blurRadius = 40.0;
     blurView.tintColor = [UIColor clearColor];
 
@@ -46,6 +47,7 @@
     self.returnDetailsLabel.text = self.data.flight.returnDate;
     self.costLabel.text = self.data.flight.price;
     self.duration.text = self.data.flight.journeyDuration;
+//    self.weather.text = self.data.destination.weather;
 }
 
 
