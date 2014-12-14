@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *addToWishlistButton;
 
 @property (nonatomic) NSArray *inspirations;
+@property (nonatomic) NSMutableArray *wishlist; // HACK coz I have no more time! need proper datasource and persistence
 
 @end
 

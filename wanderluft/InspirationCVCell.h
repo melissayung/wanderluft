@@ -17,5 +17,5 @@ static NSString *InspirationCVCellIdentifier = @"InspirationCVCell";
 
 @property (nonatomic) Inspiration *data;
 @property (weak, nonatomic) IBOutlet UIView *flightDetailBackgroundView;
-
+@property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
 @end

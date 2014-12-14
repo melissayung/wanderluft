@@ -137,6 +137,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.72549019609999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oSE-Dk-E6B">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="10"/>
+                                <color key="backgroundColor" red="0.98431372549999996" green="0.72549019609999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -152,6 +156,7 @@
                         <outlet property="inspirationsCV" destination="MuD-D0-GId" id="jxd-sl-gU4"/>
                         <outlet property="priceLabel" destination="DAL-Zm-cbb" id="6mV-yQ-1W0"/>
                         <outlet property="returnDetailsLabel" destination="Gx2-z2-scS" id="dYB-ZI-0DE"/>
+                        <outlet property="wishlistHighlight" destination="oSE-Dk-E6B" id="6Qm-qj-WwK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

@@ -18,4 +18,6 @@
 @property (nonatomic) Destination *destination;
 @property (nonatomic) Flight *flight;
 
+@property (nonatomic) BOOL wishlisted;
+
 @end

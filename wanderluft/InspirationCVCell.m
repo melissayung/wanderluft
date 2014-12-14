@@ -15,7 +15,6 @@
 @interface InspirationCVCell()
 
 @property (weak, nonatomic) IBOutlet UIImageView *cityPictureImageView;
-@property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *flightNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *departureDetailsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *returnDetailsLabel;

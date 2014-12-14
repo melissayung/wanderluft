@@ -23,11 +23,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *departureDetailsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *returnDetailsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *durationLabel;
+@property (weak, nonatomic) IBOutlet UIView *wishlistHighlight;
 
 @property (nonatomic) InspirationsDatasource *datasource;
 @property (nonatomic) Inspiration *selectedInspiration;
-//@property (nonatomic) int selectedInspirationCVIndex;
+@property (nonatomic) int selectedInspirationCVIndex;
 @property (nonatomic) BOOL isFlightDetailsShowing;
+
+// we use the same VC but different array to show the wishlist
+@property (nonatomic) BOOL isShowingWishlist; // defaults to NO. when we shake we now show the wishlist and will set this flag
 
 @end
 
@@ -35,6 +39,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.wishlist = [[NSMutableArray alloc] init];
     [self.inspirationsCV registerNib:[UINib nibWithNibName:InspirationCVCellIdentifier bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:InspirationCVCellIdentifier];
     self.datasource = [[InspirationsDatasource alloc] init];
     self.datasource.delegate = self;
@@ -50,7 +55,14 @@
 }
 
 - (void)updateView {
-    self.inspirations = [self.datasource collectionViewData];
+    if (self.isShowingWishlist) {
+        self.inspirations = self.wishlist;
+        self.wishlistHighlight.hidden = NO;
+    }
+    else {
+        self.wishlistHighlight.hidden = YES;
+        self.inspirations = [self.datasource collectionViewData];
+    }
     [self.inspirationsCV reloadData];
 }
 
@@ -60,6 +72,7 @@
     CGPoint contentOffset = view.contentOffset;
     CGSize viewSize = view.bounds.size;
     int index = MAX(0.0, contentOffset.x / viewSize.width);
+    self.selectedInspirationCVIndex = index;
     self.selectedInspiration = self.inspirations[index];
     [self fillInFlightDetails];
     [self showButtons];
@@ -75,6 +88,7 @@
     self.departureDetailsLabel.text = self.selectedInspiration.flight.departureDate;
     self.returnDetailsLabel.text = self.selectedInspiration.flight.returnDate;
     self.priceLabel.text = self.selectedInspiration.flight.price;
+    self.addToWishlistButton.selected = self.selectedInspiration.wishlisted;
 }
 
 - (void)showFlightDetails {
@@ -156,6 +170,12 @@
 
 - (IBAction)addToWishlistButtonPressed:(UIButton *)sender {
     self.addToWishlistButton.selected = !self.addToWishlistButton.selected;
+    //TODO set in datasource properly
+    ((Inspiration *)self.inspirations[self.selectedInspirationCVIndex]).wishlisted = self.addToWishlistButton.selected;
+    if (self.addToWishlistButton.selected) [self.wishlist addObject:self.inspirations[self.selectedInspirationCVIndex]];
+    else                                   [self.wishlist removeObject:self.inspirations[self.selectedInspirationCVIndex]];
+
+    [self updateView];
 }
 
 - (IBAction)infoButtonPressed:(UIButton *)sender {
@@ -166,5 +186,23 @@
     [self presentViewController:webViewVC animated:YES completion:nil];
 }
 
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if ( event.subtype == UIEventSubtypeMotionShake )
+    {
+        self.isShowingWishlist = !self.isShowingWishlist;
+        [self updateView];
+        NSLog(@"====%s===", __PRETTY_FUNCTION__);
+        // Put in code here to handle shake
+    }
+    
+    if ( [super respondsToSelector:@selector(motionEnded:withEvent:)] )
+        [super motionEnded:motion withEvent:event];
+}
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
 
 @end
