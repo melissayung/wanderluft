@@ -23,6 +23,8 @@
         self.destionationAirport  = dict[@"destinationAirport"];
         self.price = dict[@"price"];
         self.bookingURL = dict[@"bookingURL"];
+        self.departFlightNumber = dict[@"outboundFlightNumber"];
+        self.returnFlightNumber = dict[@"inboundFlightNumber"];
     }
     return self;
 }

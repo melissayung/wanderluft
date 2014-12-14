@@ -18,4 +18,6 @@
 @property (nonatomic) NSString *destionationAirport;
 @property (nonatomic) NSString *price;
 @property (nonatomic) NSString *bookingURL;
+@property (nonatomic) NSString *departFlightNumber;
+@property (nonatomic) NSString *returnFlightNumber;
 @end

@@ -16,6 +16,7 @@
 #import "FXBlurView.h"
 
 @interface InspirationsVC () <InspirationsDatasourceDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@property (weak, nonatomic) IBOutlet UILabel *returnFlightNumberLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *flightDetails;
 @property (weak, nonatomic) IBOutlet UILabel *flightNumberLabel;
@@ -90,6 +91,8 @@
     self.returnDetailsLabel.text = self.selectedInspiration.flight.returnDate;
     self.priceLabel.text = self.selectedInspiration.flight.price;
     self.addToWishlistButton.selected = self.selectedInspiration.wishlisted;
+    self.flightNumberLabel.text = [@"LH" stringByAppendingString:self.selectedInspiration.flight.departFlightNumber];
+    self.returnFlightNumberLabel.text = [@"LH" stringByAppendingString:self.selectedInspiration.flight.returnFlightNumber];
 }
 
 - (void)showFlightDetails {

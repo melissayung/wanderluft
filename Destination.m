@@ -17,7 +17,7 @@
 - (id)initWithDict:(NSDictionary *)dict {
     
     if ((self = [super init])) {
-        self.weather = dict[@"weather"];
+//        self.weather = dict[@"weather"];
         self.locationName  = dict[@"locationName"];
         self.temperature = dict[@"temperature"];
     }
