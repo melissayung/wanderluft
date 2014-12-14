@@ -43,12 +43,12 @@
     [self.inspirationsCV registerNib:[UINib nibWithNibName:InspirationCVCellIdentifier bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:InspirationCVCellIdentifier];
     self.datasource = [[InspirationsDatasource alloc] init];
     self.datasource.delegate = self;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
     [self.datasource testFetchPictures];
     //[self.datasource fetchInspirations];
 }
+
+//- (void)viewWillAppear:(BOOL)animated {
+//}
 
 -(BOOL)prefersStatusBarHidden{
     return YES;
@@ -162,10 +162,13 @@
 #pragma mark - UI callbacks
 - (IBAction)bookButtonPressed:(UIButton *)sender {
     // we need to build the deep linking
-    NSString *URL = self.selectedInspiration.flight.bookingURL;
-    
-    WebViewVC *webViewVC = [WebViewVC webViewVCWithURL:URL];
-    [self presentViewController:webViewVC animated:YES completion:nil];
+//    NSString *URL = self.selectedInspiration.flight.bookingURL;
+    NSString *URL = @"https://mobile.lufthansa.com/rs/bkg/login.do?origin=CGN&destination=HAM&dtin1=20&ymin=042014&tminbound=0"; //@"http://travelguide.lufthansa.com/de/en/paris/";// [@"http://travelguide.lufthansa.com/de/en/" stringByAppendingString:self.selectedInspiration.destination.locationName];
+    //
+
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]];
+//    WebViewVC *webViewVC = [WebViewVC webViewVCWithURL:URL];
+//    [self presentViewController:webViewVC animated:YES completion:nil];
 }
 
 - (IBAction)addToWishlistButtonPressed:(UIButton *)sender {
@@ -180,10 +183,12 @@
 
 - (IBAction)infoButtonPressed:(UIButton *)sender {
     //TODO check if luftansa has all the guide or can we check programatically and then hide/display info button?
-    NSString *URL = [@"http://travelguide.lufthansa.com/de/en/" stringByAppendingString:self.selectedInspiration.destination.locationName];
-    
-    WebViewVC *webViewVC = [WebViewVC webViewVCWithURL:URL];
-    [self presentViewController:webViewVC animated:YES completion:nil];
+    NSString *URL = @"http://travelguide.lufthansa.com/de/en/paris/";
+    //@"http://www.google.com"; //@"https://mobile.lufthansa.com/rs/bkg/login.do?origin=CGN&destination=HAM&dtin1=20&ymin=042014&tminbound=0";//@"http://travelguide.lufthansa.com/de/en/paris/";// [@"http://travelguide.lufthansa.com/de/en/" stringByAppendingString:self.selectedInspiration.destination.locationName];
+//
+//    WebViewVC *webViewVC = [WebViewVC webViewVCWithURL:URL];
+//    [self presentViewController:webViewVC animated:YES completion:nil];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]];
 }
 
 
