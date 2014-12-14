@@ -44,8 +44,8 @@
     [self.inspirationsCV registerNib:[UINib nibWithNibName:InspirationCVCellIdentifier bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:InspirationCVCellIdentifier];
     self.datasource = [[InspirationsDatasource alloc] init];
     self.datasource.delegate = self;
-    [self.datasource testFetchPictures];
-//    [self.datasource fetchInspirations];
+//    [self.datasource testFetchPictures];
+    [self.datasource fetchInspirations];
     
 //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    self.window.rootViewController = self;
@@ -166,10 +166,8 @@
 #pragma mark - UI callbacks
 - (IBAction)bookButtonPressed:(UIButton *)sender {
     // we need to build the deep linking
-//    NSString *URL = self.selectedInspiration.flight.bookingURL;
-    NSString *URL = @"https://mobile.lufthansa.com/rs/bkg/login.do?origin=CGN&destination=HAM&dtin1=20&ymin=042014&tminbound=0"; //@"http://travelguide.lufthansa.com/de/en/paris/";// [@"http://travelguide.lufthansa.com/de/en/" stringByAppendingString:self.selectedInspiration.destination.locationName];
-    //
-
+    NSString *URL = self.selectedInspiration.flight.bookingURL;
+   
 //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]];
     WebViewVC *webViewVC = [WebViewVC webViewVCWithURL:URL];
     [self presentViewController:webViewVC animated:YES completion:nil];
@@ -187,28 +185,27 @@
 
 - (IBAction)infoButtonPressed:(UIButton *)sender {
     //TODO check if luftansa has all the guide or can we check programatically and then hide/display info button?
-    NSString *URL = @"http://travelguide.lufthansa.com/de/en/paris/";
-    //@"http://www.google.com"; //@"https://mobile.lufthansa.com/rs/bkg/login.do?origin=CGN&destination=HAM&dtin1=20&ymin=042014&tminbound=0";//@"http://travelguide.lufthansa.com/de/en/paris/";// [@"http://travelguide.lufthansa.com/de/en/" stringByAppendingString:self.selectedInspiration.destination.locationName];
-//
-    WebViewVC *webViewVC = [WebViewVC webViewVCWithURL:URL];
-    [self presentViewController:webViewVC animated:YES completion:nil];
-//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]];
+    NSString *URL = @"http://travelguide.lufthansa.com/de/en/athens/";
+
+//    WebViewVC *webViewVC = [WebViewVC webViewVCWithURL:URL];
+//    [self presentViewController:webViewVC animated:YES completion:nil];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]];
 }
 
 
-- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
-{
-    if ( event.subtype == UIEventSubtypeMotionShake )
-    {
-        self.isShowingWishlist = !self.isShowingWishlist;
-        [self updateView];
-        NSLog(@"====%s===", __PRETTY_FUNCTION__);
-        // Put in code here to handle shake
-    }
-    
-    if ( [super respondsToSelector:@selector(motionEnded:withEvent:)] )
-        [super motionEnded:motion withEvent:event];
-}
+//- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+//{
+//    if ( event.subtype == UIEventSubtypeMotionShake )
+//    {
+//        self.isShowingWishlist = !self.isShowingWishlist;
+//        [self updateView];
+//        NSLog(@"====%s===", __PRETTY_FUNCTION__);
+//        // Put in code here to handle shake
+//    }
+//    
+//    if ( [super respondsToSelector:@selector(motionEnded:withEvent:)] )
+//        [super motionEnded:motion withEvent:event];
+//}
 
 - (BOOL)canBecomeFirstResponder {
     return YES;
