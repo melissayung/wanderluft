@@ -12,6 +12,7 @@
 #import "WebViewVC.h"
 #import "Inspiration.h"
 #import "Flight.h"
+#import "Destination.h"
 
 @interface InspirationsVC () <InspirationsDatasourceDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -44,8 +45,7 @@
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    self.bookButton.hidden = YES;
-    self.addToWishlistButton.hidden = YES;
+    self.infoButton.hidden = self.bookButton.hidden = self.addToWishlistButton.hidden = YES;
 }
 
 #pragma mark - CollectionViewDatasource delegate methods
@@ -66,6 +66,11 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [self showButtons:collectionView];
+    [self showPriceDetails];
+}
+
+- (void)showPriceDetails {
+    
 }
 
 - (void)showButtons:(UIScrollView *)view {
@@ -73,8 +78,7 @@
     CGPoint contentOffset = view.contentOffset;
     CGSize viewSize = view.bounds.size;
     self.selectedInspirationCVIndex = MAX(0.0, contentOffset.x / viewSize.width);
-    self.bookButton.hidden = NO;
-    self.addToWishlistButton.hidden = NO;
+    self.infoButton.hidden = self.bookButton.hidden = self.addToWishlistButton.hidden = NO;
 }
 
 #pragma mark - InspirationDatasource delegate methods
@@ -96,6 +100,14 @@
     self.addToWishlistButton.selected = !self.addToWishlistButton.selected;
 }
 
+- (IBAction)infoButtonPressed:(UIButton *)sender {
+    //TODO check if luftansa has all the guide or can we check programatically and then hide/display info button?
+    Inspiration *selectedInspiration = (Inspiration *)(self.inspirations[self.selectedInspirationCVIndex]);
+    NSString *URL = [@"http://travelguide.lufthansa.com/de/en/" stringByAppendingString:selectedInspiration.destination.locationName];
+    
+    WebViewVC *webViewVC = [WebViewVC webViewVCWithURL:URL];
+    [self presentViewController:webViewVC animated:YES completion:nil];
+}
 
 
 @end

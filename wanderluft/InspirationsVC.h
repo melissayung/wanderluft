@@ -11,6 +11,7 @@
 @interface InspirationsVC : UIViewController
 
 @property (weak, nonatomic) IBOutlet UICollectionView *inspirationsCV;
+@property (weak, nonatomic) IBOutlet UIButton *infoButton;
 @property (weak, nonatomic) IBOutlet UIButton *bookButton;
 @property (weak, nonatomic) IBOutlet UIButton *addToWishlistButton;
 

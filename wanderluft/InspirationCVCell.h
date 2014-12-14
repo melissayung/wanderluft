@@ -16,5 +16,6 @@ static NSString *InspirationCVCellIdentifier = @"InspirationCVCell";
 - (void)updateCellView;
 
 @property (nonatomic) Inspiration *data;
+@property (weak, nonatomic) IBOutlet UIView *flightDetailBackgroundView;
 
 @end

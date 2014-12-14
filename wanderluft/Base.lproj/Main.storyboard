@@ -18,7 +18,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MuD-D0-GId">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.98431372549999996" green="0.72549019609999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="vdy-r6-SnM">
                                     <size key="itemSize" width="768" height="1024"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -43,7 +43,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRu-4r-70b">
-                                <rect key="frame" x="333" y="497" width="44" height="44"/>
+                                <rect key="frame" x="333" y="738" width="44" height="44"/>
                                 <state key="normal" image="wishlistBtnNormal.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -53,13 +53,27 @@
                                     <action selector="addToWishlistButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Qzu-uM-Jny"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsR-QW-cXM">
-                                <rect key="frame" x="200" y="492" width="88" height="40"/>
-                                <state key="normal" title="BOOK">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsR-QW-cXM">
+                                <rect key="frame" x="250" y="738" width="44" height="44"/>
+                                <state key="normal" image="bookBtnNormal.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="selected" image="bookBtnPressed.png"/>
+                                <state key="highlighted" image="bookBtnPressed.png"/>
                                 <connections>
                                     <action selector="bookButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="82g-bZ-1oP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b24-dm-d7i">
+                                <rect key="frame" x="167" y="738" width="44" height="44"/>
+                                <state key="normal" image="infoBtnNormal.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="infoBtnPressed.png"/>
+                                <state key="highlighted" image="infoBtnPressed.png"/>
+                                <connections>
+                                    <action selector="bookButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="wkz-q0-Eva"/>
+                                    <action selector="infoButtonPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="8dG-H2-pHS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -69,6 +83,7 @@
                     <connections>
                         <outlet property="addToWishlistButton" destination="BRu-4r-70b" id="dyL-DE-KNl"/>
                         <outlet property="bookButton" destination="KsR-QW-cXM" id="6ru-5T-HP7"/>
+                        <outlet property="infoButton" destination="b24-dm-d7i" id="FW6-tu-BMY"/>
                         <outlet property="inspirationsCV" destination="MuD-D0-GId" id="jxd-sl-gU4"/>
                     </connections>
                 </viewController>
@@ -156,7 +171,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bookBtnNormal.png" width="236" height="236"/>
+        <image name="bookBtnPressed.png" width="236" height="236"/>
         <image name="first" width="30" height="30"/>
+        <image name="infoBtnNormal.png" width="236" height="236"/>
+        <image name="infoBtnPressed.png" width="236" height="236"/>
         <image name="second" width="30" height="30"/>
         <image name="wishlistBtnNormal.png" width="234" height="235"/>
         <image name="wishlistBtnPressed.png" width="234" height="235"/>

@@ -7,8 +7,12 @@
 //
 
 #import "Utils.h"
+#import <UIKit/UIKit.h>
 
 @implementation Utils
 
+//+ (CGFloat)deviceScreenWidth {
+//    return [UIScreen mainScreen].bounds.size.width;
+//}
 
 @end
