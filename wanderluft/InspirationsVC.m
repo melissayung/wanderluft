@@ -44,12 +44,9 @@
     [self.inspirationsCV registerNib:[UINib nibWithNibName:InspirationCVCellIdentifier bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:InspirationCVCellIdentifier];
     self.datasource = [[InspirationsDatasource alloc] init];
     self.datasource.delegate = self;
+//  uncomment to use mock test data
 //    [self.datasource testFetchPictures];
     [self.datasource fetchInspirations];
-    
-//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    self.window.rootViewController = self;
-//    [self.window makeKeyAndVisible];
 }
 
 -(BOOL)prefersStatusBarHidden{
@@ -187,19 +184,20 @@
     //TODO check if luftansa has all the guide or can we check programatically and then hide/display info button?
     NSString *URL = @"http://travelguide.lufthansa.com/de/en/athens/";
 
+    // work around for webview not working
 //    WebViewVC *webViewVC = [WebViewVC webViewVCWithURL:URL];
 //    [self presentViewController:webViewVC animated:YES completion:nil];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]];
 }
 
 
+// Feature to show wishlist on shake on hold for now. ran out of time
 //- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 //{
 //    if ( event.subtype == UIEventSubtypeMotionShake )
 //    {
 //        self.isShowingWishlist = !self.isShowingWishlist;
 //        [self updateView];
-//        NSLog(@"====%s===", __PRETTY_FUNCTION__);
 //        // Put in code here to handle shake
 //    }
 //    

@@ -32,11 +32,6 @@
 
 - (void)updateCellView {
     
-//    UIView *topBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, self.cityNameLabel.frame.size.height)];
-//    [topBar setBackgroundColor:[UIColor colorWithRed:0.984 green:0.725 blue:0 alpha:1]];
-//    [self.contentView addSubview:topBar];
-//    [self sendSubviewToBack:topBar];
-    
     FXBlurView *blurView = [[FXBlurView alloc] init];
     [blurView setFrame:CGRectMake(0, self.cityNameLabel.frame.origin.y, [UIScreen mainScreen].bounds.size.width, self.cityNameLabel.frame.size.height)];
     blurView.blurRadius = 40.0;
