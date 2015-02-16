@@ -10,16 +10,10 @@
 #import "Inspiration.h"
 #import "Destination.h"
 #import "Flight.h"
-#import "FXBlurView.h"
 
 @interface InspirationCVCell()
 
 @property (weak, nonatomic) IBOutlet UIImageView *cityPictureImageView;
-@property (weak, nonatomic) IBOutlet UILabel *flightNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *departureDetailsLabel;
-@property (weak, nonatomic) IBOutlet UILabel *returnDetailsLabel;
-@property (weak, nonatomic) IBOutlet UILabel *costLabel;
-@property (weak, nonatomic) IBOutlet UILabel *duration;
 @property (weak, nonatomic) IBOutlet UILabel *weather;
 
 @end
@@ -32,20 +26,20 @@
 
 - (void)updateCellView {
     
-    FXBlurView *blurView = [[FXBlurView alloc] init];
-    [blurView setFrame:CGRectMake(0, self.cityNameLabel.frame.origin.y, [UIScreen mainScreen].bounds.size.width, self.cityNameLabel.frame.size.height)];
-    blurView.blurRadius = 40.0;
-    blurView.tintColor = [UIColor clearColor];
-
-    [self.contentView insertSubview:blurView atIndex:1];
+    UIView *topBarBgView = [[UIView alloc] init];
+    [topBarBgView setFrame:CGRectMake(0, self.cityNameLabel.frame.origin.y, [UIScreen mainScreen].bounds.size.width, self.cityNameLabel.frame.size.height)];
+    topBarBgView.alpha = .5;
+    topBarBgView.backgroundColor = [UIColor whiteColor];
+    [self.contentView insertSubview:topBarBgView atIndex:1];
     
+#ifdef TEST
+    NSURL *localFileURL = [[NSBundle mainBundle] URLForResource:self.data.pictureURL withExtension:@"jpg"];
+    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:localFileURL]];
+#else
     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.data.pictureURL]]];
+#endif
     [self.cityPictureImageView setImage:image];
     self.cityNameLabel.text = self.data.destination.locationName;
-    self.departureDetailsLabel.text = self.data.flight.departureDate;
-    self.returnDetailsLabel.text = self.data.flight.returnDate;
-    self.costLabel.text = self.data.flight.price;
-    self.duration.text = self.data.flight.journeyDuration;
 //    self.weather.text = self.data.destination.weather;
 }
 

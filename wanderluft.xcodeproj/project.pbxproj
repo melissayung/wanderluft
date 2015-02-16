@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		708F50F01A8D8076009B5BB1 /* Thailand.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 708F50EF1A8D8076009B5BB1 /* Thailand.jpg */; };
+		708F50FA1A8E05FE009B5BB1 /* Milan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 708F50F31A8E05FE009B5BB1 /* Milan.jpg */; };
+		708F50FE1A8E05FE009B5BB1 /* Madrid.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 708F50F71A8E05FE009B5BB1 /* Madrid.jpg */; };
+		708F50FF1A8E05FE009B5BB1 /* Corsica.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 708F50F81A8E05FE009B5BB1 /* Corsica.jpg */; };
 		70E3A6741A3CB683000ABFF3 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E3A6731A3CB683000ABFF3 /* Service.m */; };
 		70E3A6891A3CB79C000ABFF3 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E3A6771A3CB79C000ABFF3 /* AFHTTPRequestOperation.m */; };
 		70E3A68A1A3CB79C000ABFF3 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E3A6791A3CB79C000ABFF3 /* AFHTTPRequestOperationManager.m */; };
@@ -37,6 +41,7 @@
 		70E3A6DA1A3D39F8000ABFF3 /* infoBtnNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 70E3A6D81A3D39F8000ABFF3 /* infoBtnNormal.png */; };
 		70E3A6DB1A3D39F8000ABFF3 /* infoBtnPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 70E3A6D91A3D39F8000ABFF3 /* infoBtnPressed.png */; };
 		70E3A6E11A3DB6AA000ABFF3 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = 70E3A6E01A3DB6AA000ABFF3 /* cross.png */; };
+		70EE85531A8FA5720089AFB7 /* Thailand2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 70EE85521A8FA5710089AFB7 /* Thailand2.jpg */; };
 		70F2D9461A3C70CB003B9C63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F2D9451A3C70CB003B9C63 /* main.m */; };
 		70F2D9491A3C70CB003B9C63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F2D9481A3C70CB003B9C63 /* AppDelegate.m */; };
 		70F2D94C1A3C70CB003B9C63 /* InspirationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F2D94B1A3C70CB003B9C63 /* InspirationsVC.m */; };
@@ -65,6 +70,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		708F50EF1A8D8076009B5BB1 /* Thailand.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Thailand.jpg; sourceTree = "<group>"; };
+		708F50F31A8E05FE009B5BB1 /* Milan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Milan.jpg; sourceTree = "<group>"; };
+		708F50F71A8E05FE009B5BB1 /* Madrid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Madrid.jpg; sourceTree = "<group>"; };
+		708F50F81A8E05FE009B5BB1 /* Corsica.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Corsica.jpg; sourceTree = "<group>"; };
 		70E3A6721A3CB683000ABFF3 /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
 		70E3A6731A3CB683000ABFF3 /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
 		70E3A6761A3CB79C000ABFF3 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -118,6 +127,7 @@
 		70E3A6D81A3D39F8000ABFF3 /* infoBtnNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = infoBtnNormal.png; sourceTree = "<group>"; };
 		70E3A6D91A3D39F8000ABFF3 /* infoBtnPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = infoBtnPressed.png; sourceTree = "<group>"; };
 		70E3A6E01A3DB6AA000ABFF3 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
+		70EE85521A8FA5710089AFB7 /* Thailand2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Thailand2.jpg; sourceTree = "<group>"; };
 		70F2D9401A3C70CA003B9C63 /* wanderluft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wanderluft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F2D9441A3C70CB003B9C63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70F2D9451A3C70CB003B9C63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -239,6 +249,11 @@
 		70E3A6BD1A3CDD36000ABFF3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				70EE85521A8FA5710089AFB7 /* Thailand2.jpg */,
+				708F50F31A8E05FE009B5BB1 /* Milan.jpg */,
+				708F50F71A8E05FE009B5BB1 /* Madrid.jpg */,
+				708F50F81A8E05FE009B5BB1 /* Corsica.jpg */,
+				708F50EF1A8D8076009B5BB1 /* Thailand.jpg */,
 				70E3A6E01A3DB6AA000ABFF3 /* cross.png */,
 				70E3A6D81A3D39F8000ABFF3 /* infoBtnNormal.png */,
 				70E3A6D91A3D39F8000ABFF3 /* infoBtnPressed.png */,
@@ -438,16 +453,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				708F50F01A8D8076009B5BB1 /* Thailand.jpg in Resources */,
 				70E3A6DA1A3D39F8000ABFF3 /* infoBtnNormal.png in Resources */,
 				70E3A6D71A3D38F8000ABFF3 /* bookBtnNormal.png in Resources */,
+				708F50FA1A8E05FE009B5BB1 /* Milan.jpg in Resources */,
 				70F2D97F1A3C8BC7003B9C63 /* InspirationCVCell.xib in Resources */,
 				70E3A6BF1A3CDD42000ABFF3 /* LH_Crane-Single_yw_13_rgb_2.gif in Resources */,
 				70E3A6D31A3D3897000ABFF3 /* bookBtnPressed.png in Resources */,
+				70EE85531A8FA5720089AFB7 /* Thailand2.jpg in Resources */,
 				70F2D96E1A3C7A0C003B9C63 /* inspirations.json in Resources */,
+				708F50FE1A8E05FE009B5BB1 /* Madrid.jpg in Resources */,
 				70F2D9521A3C70CB003B9C63 /* Main.storyboard in Resources */,
 				70E3A6E11A3DB6AA000ABFF3 /* cross.png in Resources */,
 				70F2D9571A3C70CB003B9C63 /* LaunchScreen.xib in Resources */,
 				70E3A6D41A3D3897000ABFF3 /* wishlistBtnNormal.png in Resources */,
+				708F50FF1A8E05FE009B5BB1 /* Corsica.jpg in Resources */,
 				70E3A6D51A3D3897000ABFF3 /* wishlistBtnPressed.png in Resources */,
 				70F2D9541A3C70CB003B9C63 /* Images.xcassets in Resources */,
 				70E3A6DB1A3D39F8000ABFF3 /* infoBtnPressed.png in Resources */,
@@ -565,6 +585,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					"TEST=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -621,9 +642,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = wanderluft/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -631,9 +654,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = wanderluft/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

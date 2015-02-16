@@ -13,6 +13,7 @@
 @interface Inspiration : NSObject
 
 + (Inspiration *)inspirationWithDict:(NSDictionary *)dict;
+- (NSString *)getDestinationName;
 
 @property (nonatomic) NSString *pictureURL;
 @property (nonatomic) Destination *destination;

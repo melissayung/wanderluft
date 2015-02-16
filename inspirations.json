@@ -1,2 +1,70 @@
-[{"destinationDetails": {"locationName": "Phuket", "weather": "fog, 1"}, "pictureURL": "http://10.1.128.91:8000/static/thailand.jpg", "flightDetails": {"inboundFlightNumber": "1041", "bookingURL": "https://mobile.lufthansa.com/rs/bkg/login.do?origin=TXL&destination=CDG&dtin1=28&ymin=122014&tminbound=0", "journeyDuration": "1h", "departureDate": "28 December 2014 - 06:45", "outboundFlightNumber": "0173", "returnDate": "01 January 2015 - 18:05", "destinationAirport": "FRA", "price": "264.78"}},
- {"pictureURL": "http://10.1.128.91:8000/static/thailand.jpg", "destinationDetails": {"locationName": "Phuket", "weather": "fog, 1"}, "flightDetails": {"price": "264.78", "inboundFlightNumber": "1041", "bookingURL": "https://mobile.lufthansa.com/rs/bkg/login.do?origin=TXL&destination=CDG&dtin1=28&ymin=122014&tminbound=0", "departureDate": "28 December 2014 - 06:45", "destinationAirport": "FRA", "returnDate": "01 January 2015 - 18:05", "outboundFlightNumber": "0173", "journeyDuration": "1h"}}]
+ [
+  {
+  "destinationDetails": {
+  "locationName": "Phuket",
+  "weather": "sunny, 28"
+  },
+  "pictureURL": "Thailand",
+  "flightDetails": {
+  "inboundFlightNumber": "1041",
+  "bookingURL": "https://mobile.lufthansa.com/rs/bkg/login.do?origin=TXL&destination=CDG&dtin1=28&ymin=122014&tminbound=0",
+  "journeyDuration": "9h",
+  "departureDate": "28 February 2015 - 06:45",
+  "outboundFlightNumber": "0173",
+  "returnDate": "14 March 2015 - 18:05",
+  "destinationAirport": "HKT",
+  "price": "764.78"
+  }
+  },
+  {
+  "pictureURL": "Milan",
+  "destinationDetails": {
+  "locationName": "Milan",
+  "weather": "overcast, 10"
+  },
+  "flightDetails": {
+  "price": "164.78",
+  "inboundFlightNumber": "2041",
+  "bookingURL": "dummyURL",
+  "departureDate": "2 March 2015 - 12:45",
+  "destinationAirport": "MXP",
+  "returnDate": "8 March 2015 - 18:05",
+  "outboundFlightNumber": "0273",
+  "journeyDuration": "1h"
+  }
+  },
+  {
+  "pictureURL": "Madrid",
+  "destinationDetails": {
+  "locationName": "Madrid",
+  "weather": "sunny, 18"
+  },
+  "flightDetails": {
+  "price": "254.78",
+  "inboundFlightNumber": "1014",
+  "bookingURL": "dummyURL",
+  "departureDate": "14 March 2015 - 10:10",
+  "destinationAirport": "   MAD",
+  "returnDate": "18 March 2015 - 18:05",
+  "outboundFlightNumber": "0173",
+  "journeyDuration": "1h"
+  }
+  },
+  {
+  "destinationDetails": {
+  "locationName": "Bastia",
+  "weather": "sunny, 20"
+  },
+  "pictureURL": "Corsica",
+  "flightDetails": {
+  "inboundFlightNumber": "2221",
+  "bookingURL": "dummyURL",
+  "journeyDuration": "2h",
+  "departureDate": "28 July 2015 - 09:00",
+  "outboundFlightNumber": "0172",
+  "returnDate": "28 Aug 2015 - 10:05",
+  "destinationAirport": "BIA",
+  "price": "220.00"
+  }
+  }
+  ]

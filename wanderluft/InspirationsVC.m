@@ -13,7 +13,6 @@
 #import "Inspiration.h"
 #import "Flight.h"
 #import "Destination.h"
-#import "FXBlurView.h"
 
 @interface InspirationsVC () <InspirationsDatasourceDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UILabel *returnFlightNumberLabel;
@@ -27,8 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIView *wishlistHighlight;
 
 @property (nonatomic) InspirationsDatasource *datasource;
-@property (nonatomic) Inspiration *selectedInspiration;
-@property (nonatomic) int selectedInspirationCVIndex;
+@property (nonatomic) NSInteger selectedInspirationCVIndex;
 @property (nonatomic) BOOL isFlightDetailsShowing;
 
 // we use the same VC but different array to show the wishlist
@@ -44,9 +42,14 @@
     [self.inspirationsCV registerNib:[UINib nibWithNibName:InspirationCVCellIdentifier bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:InspirationCVCellIdentifier];
     self.datasource = [[InspirationsDatasource alloc] init];
     self.datasource.delegate = self;
-//  uncomment to use mock test data
-//    [self.datasource testFetchPictures];
+    
+    self.selectedInspirationCVIndex = 0; // on first load, we are at inspiration 0
+    
+#ifdef TEST
+    [self.datasource testFetchPictures];
+#else
     [self.datasource fetchInspirations];
+#endif
 }
 
 -(BOOL)prefersStatusBarHidden{
@@ -72,8 +75,6 @@
     CGSize viewSize = view.bounds.size;
     int index = MAX(0.0, contentOffset.x / viewSize.width);
     self.selectedInspirationCVIndex = index;
-    self.selectedInspiration = self.inspirations[index];
-    [self fillInFlightDetails];
     [self showButtons];
 }
 
@@ -83,23 +84,28 @@
 }
 
 - (void)fillInFlightDetails {
-    self.durationLabel.text = self.selectedInspiration.flight.journeyDuration;
-    self.departureDetailsLabel.text = self.selectedInspiration.flight.departureDate;
-    self.returnDetailsLabel.text = self.selectedInspiration.flight.returnDate;
-    self.priceLabel.text = self.selectedInspiration.flight.price;
-    self.addToWishlistButton.selected = self.selectedInspiration.wishlisted;
-    self.flightNumberLabel.text = [@"LH" stringByAppendingString:self.selectedInspiration.flight.departFlightNumber];
-    self.returnFlightNumberLabel.text = [@"LH" stringByAppendingString:self.selectedInspiration.flight.returnFlightNumber];
+    Inspiration *selectedInspiration = self.inspirations[self.selectedInspirationCVIndex];
+    self.durationLabel.text = selectedInspiration.flight.journeyDuration;
+    self.departureDetailsLabel.text = selectedInspiration.flight.departureDate;
+    self.returnDetailsLabel.text = selectedInspiration.flight.returnDate;
+    self.priceLabel.text = selectedInspiration.flight.price;
+    self.addToWishlistButton.selected = selectedInspiration.wishlisted;
+    self.flightNumberLabel.text = [@"LH" stringByAppendingString:selectedInspiration.flight.departFlightNumber];
+    self.returnFlightNumberLabel.text = [@"LH" stringByAppendingString:selectedInspiration.flight.returnFlightNumber];
 }
 
 - (void)showFlightDetails {
+    [self fillInFlightDetails];
     // slide the price up
     [UIView animateWithDuration:0.5f
                      animations:^{
+                         // TO FIX why isn't it showing on the first tap! the frame isn't updated
+                         NSLog(@"====%s===", __PRETTY_FUNCTION__);
                          self.flightDetails.frame = CGRectMake(self.flightDetails.frame.origin.x, 854, self.flightDetails.frame.size.width, self.flightDetails.frame.size.height);
                      }
                      completion:^(BOOL finished){
                          self.isFlightDetailsShowing = YES;
+                         NSLog(@"%@", self.flightDetails);
                      }];
 }
 
@@ -151,6 +157,8 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"====%s===", __PRETTY_FUNCTION__);
+    self.selectedInspirationCVIndex = indexPath.row;
     if (self.isFlightDetailsShowing) [self hideFlightDetails];
     else                             [self showFlightDetails];
 }
@@ -162,10 +170,11 @@
 
 #pragma mark - UI callbacks
 - (IBAction)bookButtonPressed:(UIButton *)sender {
-    // we need to build the deep linking
-    NSString *URL = self.selectedInspiration.flight.bookingURL;
+    // deep linking in Lufthansa app?
+    // backend would return something like
+    // https://mobile.lufthansa.com/rs/bkg/login.do?origin=TXL&destination=CDG&dtin1=28&ymin=122014&tminbound=0
+    NSString *URL = ((Inspiration *)self.inspirations[self.selectedInspirationCVIndex]).flight.bookingURL;
    
-//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]];
     WebViewVC *webViewVC = [WebViewVC webViewVCWithURL:URL];
     [self presentViewController:webViewVC animated:YES completion:nil];
 }
@@ -182,12 +191,12 @@
 
 - (IBAction)infoButtonPressed:(UIButton *)sender {
     //TODO check if luftansa has all the guide or can we check programatically and then hide/display info button?
-    NSString *URL = @"http://travelguide.lufthansa.com/de/en/athens/";
-
-    // work around for webview not working
-//    WebViewVC *webViewVC = [WebViewVC webViewVCWithURL:URL];
-//    [self presentViewController:webViewVC animated:YES completion:nil];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL]];
+    NSString *URL = @"http://travelguide.lufthansa.com/de/en/";
+    NSString *location = [[(Inspiration *)(self.inspirations[self.selectedInspirationCVIndex]) getDestinationName] lowercaseString];
+    URL = [URL stringByAppendingString:location];
+    
+    WebViewVC *webViewVC = [WebViewVC webViewVCWithURL:URL];
+    [self presentViewController:webViewVC animated:YES completion:nil];
 }
 
 

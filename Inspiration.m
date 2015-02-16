@@ -16,6 +16,10 @@
     return [[Inspiration alloc] initWithDict:dict];
 }
 
+- (NSString *)getDestinationName {
+    return ((Destination *)(self.destination)).locationName;
+}
+
 - (id)initWithDict:(NSDictionary *)dict {
     
     if ((self = [super init])) {
